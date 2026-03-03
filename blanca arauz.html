@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blanca Arauz - Poeta y Luchadora Social</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "✧";
+            font-size: 15rem;
+            position: absolute;
+            left: -2rem;
+            top: -3rem;
+            opacity: 0.1;
+            color: white;
+            transform: rotate(15deg);
+        }
+
+        header::after {
+            content: "✦";
+            font-size: 15rem;
+            position: absolute;
+            right: -2rem;
+            bottom: -5rem;
+            opacity: 0.1;
+            color: white;
+            transform: rotate(-15deg);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        header h1 span {
+            font-weight: 700;
+            display: block;
+            font-size: 4rem;
+            margin-top: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-style: italic;
+            position: relative;
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #6c3483;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Secciones */
+        .section {
+            margin-bottom: 5rem;
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #6c3483;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #e8daef;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: #8e44ad;
+        }
+
+        /* Galería de fotos */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            background: #f8f4fc;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 25px rgba(142, 68, 173, 0.3);
+        }
+
+        .photo-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 3px solid #8e44ad;
+        }
+
+        .photo-caption {
+            padding: 1.2rem;
+            font-weight: 500;
+            color: #6c3483;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Biografía - línea de tiempo */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #8e44ad, #d2b4de);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: #f8f4fc;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(142, 68, 173, 0.2);
+        }
+
+        .timeline-content h3 {
+            color: #8e44ad;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: #6c3483;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: #8e44ad;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+            box-shadow: 0 0 0 3px #e8daef;
+        }
+
+        /* Tarjetas de legado */
+        .legacy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .legacy-card {
+            background: linear-gradient(135deg, #f8f4fc, white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e8daef;
+        }
+
+        .legacy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.2);
+            border-color: #8e44ad;
+        }
+
+        .legacy-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: #8e44ad;
+            color: white;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+
+        .legacy-card h3 {
+            color: #6c3483;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .legacy-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Cita */
+        .quote {
+            background: linear-gradient(135deg, #6c3483, #8e44ad);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(108, 52, 131, 0.3);
+        }
+
+        .quote blockquote {
+            font-size: 2rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .quote blockquote::before {
+            content: "❝";
+            font-size: 4rem;
+            opacity: 0.5;
+            display: block;
+            margin-bottom: -1rem;
+        }
+
+        .quote cite {
+            display: block;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #8e44ad, #e8daef, #8e44ad);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+
+        .footer-content .heart {
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header h1 span {
+                font-size: 3rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item, .timeline-item:nth-child(even) {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 50px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+                top: 50%;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recordando a<span>Blanca Arauz</span></h1>
+        <p>"La voz poética de la lucha social nicaragüense"</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#vida">Vida</a></li>
+            <li><a href="#trayectoria">Trayectoria</a></li>
+            <li><a href="#legado">Legado</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#muerte">Muerte</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Galería de fotos destacada -->
+        <section class="section" id="galeria">
+            <h2 class="section-title">Galería de Recuerdos</h2>
+            <div class="photo-gallery">
+                <div class="photo-card">
+                    <div class="photo-img" style="background: linear-gradient(45deg, #8e44ad, #9b59b6); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        📸 Blanca joven
+                    </div>
+                    <div class="photo-caption">Blanca en sus años de juventud, iniciando su carrera poética</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-img" style="background: linear-gradient(45deg, #6c3483, #8e44ad); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        📖 Recital poético
+                    </div>
+                    <div class="photo-caption">Durante un recital de poesía en Managua, años 80</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-img" style="background: linear-gradient(45deg, #9b59b6, #6c3483); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        ✊ Lucha social
+                    </div>
+                    <div class="photo-caption">Blanca acompañando a comunidades campesinas</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-img" style="background: linear-gradient(45deg, #8e44ad, #c39bd3); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        🏆 Homenaje
+                    </div>
+                    <div class="photo-caption">Último homenaje en vida, recibiendo reconocimiento</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Vida -->
+        <section class="section" id="vida">
+            <h2 class="section-title">Su Vida</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Nacimiento</h3>
+                        <div class="date">1953 - Managua, Nicaragua</div>
+                        <p>Blanca Arauz nació en el barrio San Luis de Managua, en el seno de una familia humilde. Desde pequeña mostró interés por la literatura y la justicia social, influenciada por el entorno de lucha de su comunidad.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Formación y Primeros Poemas</h3>
+                        <div class="date">1970-1975</div>
+                        <p>Estudió en la Escuela Normal de Managua, donde comenzó a escribir sus primeros poemas. Participó en talleres literarios y conoció a otros poetas que marcarían su carrera.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Publicación de "Voces del Amanecer"</h3>
+                        <div class="date">1978</div>
+                        <p>Su primer poemario, "Voces del Amanecer", fue publicado de manera independiente y rápidamente se convirtió en referencia de la poesía comprometida en Nicaragua.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Activismo Social</h3>
+                        <div class="date">1980-1990</div>
+                        <p>Durante esta década, Blanca combinó su labor poética con el activismo social, trabajando con comunidades indígenas y campesinas, y documentando sus historias a través de la poesía.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Trayectoria -->
+        <section class="section" id="trayectoria">
+            <h2 class="section-title">Trayectoria Poética</h2>
+            <div class="legacy-grid">
+                <div class="legacy-card">
+                    <div class="legacy-icon">📚</div>
+                    <h3>Obras Destacadas</h3>
+                    <p>"Voces del Amanecer" (1978)<br>
+                    "Cantos de Tierra y Libertad" (1985)<br>
+                    "Memorias del Viento" (1992)<br>
+                    "Raíces de Fuego" (2001)</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">🏅</div>
+                    <h3>Reconocimientos</h3>
+                    <p>Premio Nacional de Poesía (1987)<br>
+                    Orden de la Independencia Cultural (1995)<br>
+                    Doctorado Honoris Causa - UNAN (2005)</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">🌎</div>
+                    <h3>Influencia</h3>
+                    <p>Su obra ha sido traducida a 8 idiomas y estudiada en universidades de América Latina, Europa y Estados Unidos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cita famosa -->
+        <div class="quote">
+            <blockquote>
+                La poesía no es un lujo, es el grito de los que no tienen voz, el susurro de la tierra que clama justicia.
+            </blockquote>
+            <cite>— Blanca Arauz, 1998</cite>
+        </div>
+
+        <!-- Sección de Legado -->
+        <section class="section" id="legado">
+            <h2 class="section-title">Su Legado</h2>
+            <div class="legacy-grid">
+                <div class="legacy-card">
+                    <div class="legacy-icon">📖</div>
+                    <h3>Literario</h3>
+                    <p>Sus poemarios continúan siendo reeditados y estudiados. La "Cátedra Blanca Arauz" en la UNAN promueve el estudio de la poesía femenina nicaragüense.</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">🤝</div>
+                    <h3>Social</h3>
+                    <p>La Fundación Blanca Arauz trabaja con jóvenes poetas de comunidades rurales, otorgando becas y talleres gratuitos.</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">🎭</div>
+                    <h3>Cultural</h3>
+                    <p>Cada año, en su honor, se realiza el Festival de Poesía "Voces del Amanecer" en Managua, reuniendo poetas de todo el mundo.</p>
+                </div>
+                <div class="legacy-card">
+                    <div class="legacy-icon">🏛️</div>
+                    <h3>Reconocimiento</h3>
+                    <p>Una biblioteca pública en Managua lleva su nombre, y su casa natal fue convertida en centro cultural.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Muerte -->
+        <section class="section" id="muerte">
+            <h2 class="section-title">Su Partida</h2>
+            <div class="photo-gallery" style="grid-template-columns: 1fr 1fr;">
+                <div class="photo-card">
+                    <div class="photo-img" style="background: #6c3483; display: flex; align-items: center; justify-content: center; color: white;">
+                        🕯️ 15 de marzo de 2010
+                    </div>
+                    <div class="photo-caption">Fallecimiento en Managua</div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-img" style="background: #8e44ad; display: flex; align-items: center; justify-content: center; color: white;">
+                        🌹 Homenaje Nacional
+                    </div>
+                    <div class="photo-caption">Miles acompañaron su cortejo fúnebre</div>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; background: #f8f4fc; padding: 2rem; border-radius: 15px;">
+                <p style="font-size: 1.2rem; line-height: 1.8;">Blanca Arauz falleció el 15 de marzo de 2010 en Managua, a los 57 años, víctima de una larga enfermedad. Su muerte provocó muestras de pesar en todo el país y América Latina. El gobierno declaró tres días de duelo nacional y su funeral fue uno de los más multitudinarios para una figura cultural en la historia de Nicaragua.</p>
+                <p style="font-size: 1.2rem; line-height: 1.8; margin-top: 1rem;">Sus restos descansan en el Cementerio General de Managua, donde su tumba se ha convertido en lugar de peregrinación para admiradores y jóvenes poetas que buscan inspiración.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Página dedicada a la memoria de <strong>Blanca Arauz</strong></p>
+            <p>1953 ✦ 2010</p>
+            <p>"Su voz vive en cada poema, su lucha en cada corazón"</p>
+            <p style="margin-top: 2rem;">Creada con <span class="heart">❤️</span> para preservar su legado</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">© 2024 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
